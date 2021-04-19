@@ -1,0 +1,20 @@
+sidebar.sidebar {
+    width: 581px;
+    height: 100vh;
+    background-color: red;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.container__info {
+    width: 100%;
+    height: 40%;
+    background-color: green;
+}
+
+.container__data {
+    width: 100%;
+    height: 60%;
+    background-color: var(--dark-grey);
+}
