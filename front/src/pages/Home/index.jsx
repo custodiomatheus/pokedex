@@ -7,18 +7,18 @@ export default function Home() {
 
 	return (
 		<div className={styles.container}>
-			<section className={styles.choice_content}>
+			<section className={styles.container__choice}>
 				<div className={styles.choice}>
-					<div className={styles.choice__1} onClick={() => history.push("/pokemon")}><span>Pokemon</span></div>
-					<div className={styles.choice__2}><span>Favoritos</span></div>
+					<div className={styles["choice__item--1"]} onClick={() => history.push("/pokedex/pokemon")}><span className={styles.choice__text}>Pokedex</span></div>
+					<div className={styles["choice__item--2"]}><span className={styles.choice__text}>Favoritos</span></div>
 				</div>
 				<div className={styles.choice}>
-					<div className={styles.choice__3}><span>Itens</span></div>
-					<div className={styles.choice__4}><span>Filmes</span></div>
+					<div className={styles["choice__item--3"]} onClick={() => history.push("/pokedex/item")}><span className={styles.choice__text}>Itens</span></div>
+					<div className={styles["choice__item--4"]}><span className={styles.choice__text}>Filmes</span></div>
 				</div>
 			</section>
 
-			<section className={styles.image_content}>
+			<section className={styles.container__image}>
 				<img src="https://i.pinimg.com/originals/25/d1/7c/25d17c2b9859417618eb499dacae3795.png" height="350" />
 			</section>
 		</div>

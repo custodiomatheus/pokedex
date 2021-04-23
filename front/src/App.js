@@ -1,23 +1,29 @@
 import { useState } from 'react';
-import styles from './App.module.css';
 
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Routes from './routes';
 
+import styles from './App.module.css';
+
+import { SidebarContext } from "./context/Sibedar";
+
 function App() {
 
-	const [openSidebar, setOpenSidebar] = useState(false);
+	const [sidebar, setSidebar] = useState({is_open: false, data: null})
 
 	return (
 		<>
 			<Header />
 
-			<main>
-				<Routes />
-			</main>
+			<SidebarContext.Provider value={{ sidebar, setSidebar }}>
+				<main>
+					<Routes />
+				</main>
 
-			{openSidebar ? <Sidebar props="" /> : null}
+				<Sidebar />
+			</SidebarContext.Provider>
+
 		</>
 	);
 }

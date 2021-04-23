@@ -5,7 +5,7 @@
     justify-content: space-between;
 }
 
-section.choice_content {
+.container__choice {
     width: 60%;
     height: 360px;
     display: flex;
@@ -13,7 +13,7 @@ section.choice_content {
     justify-content: space-between;
 }
 
-section.image_content {
+.container__image {
     width: 30%;
     height: 360px;
     display: flex;
@@ -21,7 +21,7 @@ section.image_content {
     justify-content: flex-end;
 }
 
-div.choice {
+.choice {
     width: 100%;
     height: 48%;
     display: flex;
@@ -43,7 +43,7 @@ div.choice {
     margin-bottom: 8px;
 }
 
-div>span {
+.choice__text {
     font-size: 30px;
     color: var(--white);
     font-weight: 700;
@@ -51,18 +51,18 @@ div>span {
     margin-bottom: 8%;
 }
 
-.choice__1 {
+.choice__item--1 {
     background-color: var(--green);
 }
 
-.choice__2 {
+.choice__item--2 {
     background-color: var(--blue);
 }
 
-.choice__3 {
+.choice__item--3 {
     background-color: var(--pink);
 }
 
-.choice__4 {
+.choice__item--4 {
     background-color: var(--purple);
 }
