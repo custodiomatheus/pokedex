@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 
@@ -7,11 +7,15 @@ import api from '../../service/api';
 import PokemonCard from '../../components/PokemonCard';
 import ItemCard from '../../components/ItemCard';
 
+import { SidebarContext } from '../../context/Sibedar';
+
 import styles from './style.module.css';
 
 export default function Pokemon(props) {
 
 	const search = props.match.params.search;
+
+	const { sidebar, setSidebar } = useContext(SidebarContext);
 
 	const history = useHistory();
 
@@ -29,7 +33,7 @@ export default function Pokemon(props) {
 	return (
 		<div className={styles.container}>
 			<h2 className={styles.container__title}>
-				<HiArrowNarrowLeft style={{ marginRight: '1vw' }} onClick={() => history.push("/")} cursor="pointer" />
+				<HiArrowNarrowLeft style={{ marginRight: '1vw' }} onClick={() => { setSidebar({ is_open: false, data: null }); history.push("/") }} cursor="pointer" />
 				{
 					search === "pokemon" ?
 						"Pokemon" : "Items"

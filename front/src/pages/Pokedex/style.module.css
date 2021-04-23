@@ -5,7 +5,7 @@
 }
 
 .container__title {
-    color: var(--white);
+    color: var(--dark-grey);
     margin: 0 0 5vh;
     font-size: 34px;
     display: flex;
@@ -20,7 +20,7 @@
 }
 
 .container__text {
-    color: var(--white);
+    color: var(--dark-grey);
     align-self: center;
     cursor: pointer;
     margin-top: 8vh;

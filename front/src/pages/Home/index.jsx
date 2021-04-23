@@ -14,7 +14,7 @@ export default function Home() {
 				</div>
 				<div className={styles.choice}>
 					<div className={styles["choice__item--3"]} onClick={() => history.push("/pokedex/item")}><span className={styles.choice__text}>Itens</span></div>
-					<div className={styles["choice__item--4"]}><span className={styles.choice__text}>Filmes</span></div>
+					<div className={styles["choice__item--4"]}><span className={styles.choice__text}>Locais</span></div>
 				</div>
 			</section>
 

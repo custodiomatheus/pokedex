@@ -104,8 +104,8 @@ export default function Sidebar() {
 
 				<section className={styles.sidebar__body}>
 					<div className={styles.sidebar__container}>
-						<p className={styles.sidebar__text}>{data.item.effect_entries[0].effect}</p>
-						<p className={styles.sidebar__text}>{data.item.effect_entries[0].short_effect}</p>
+						<p className={styles["sidebar__text--dark"]}>{data.item.effect_entries[0].effect}</p>
+						<p className={styles["sidebar__text--dark"]}>{data.item.effect_entries[0].short_effect}</p>
 					</div>
 				</section>
 			</sidebar>
