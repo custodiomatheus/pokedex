@@ -1,43 +1,22 @@
-export const pokemonTypeColor = (type) => {
-    return type === 'grass' ? '#5DBE61' : 
-		type === 'fire' ? '#F57568' :
-		type === 'water' ? '#58A7F2' : 
-		type === 'normal' ? '#ABA873' :
-		type === 'flying' ? '#075663' :
-		type === 'bug' ? '#90B92D' : 
-		type === 'poison' ? '#60127F' : 
-		type === 'electric' ? '#FACA4A' : 
-		type === 'ground' ? '#BEAB20' : 
-		type === 'fighting' ? '#7F0A10' : 
-		type === 'psychic' ? '#F45691' : 		
-		type === 'rock' ? '#463F25' : 
-		type === 'ice' ? '#114EAD' : 
-		type === 'ghost' ? '#462A52' : 
-		type === 'dragon' ? '#8954FC' : 
-		type === 'dark' ? '#141414' : 
-		type === 'steel' ? '#7A8D89' : 
-		type === 'fairy' ? '#F77DA6' : '';
-}
-
-export const typeColor = (type) => {
-    return type === 'grass' ? '#1F4020' : 
-		type === 'fire' ? '#753831' :
-		type === 'water' ? '#294F73' : 
-		type === 'normal' ? '#6B6948' :
-		type === 'flying' ? '#05414A' :
-		type === 'bug' ? '#2D3B0E' : 
-		type === 'poison' ? '#9A1DCC' : 
-		type === 'electric' ? '#7A6425' : 
-		type === 'ground' ? '#403A0B' : 
-		type === 'fighting' ? '#CC101A' : 
-		type === 'psychic' ? '#752945' : 		
-		type === 'rock' ? '#91834D' : 
-		type === 'ice' ? '#196FFA' : 
-		type === 'ghost' ? '#724585' : 
-		type === 'dragon' ? '#44297D' : 
-		type === 'dark' ? '#616161' : 
-		type === 'steel' ? '#434D4A' : 
-		type === 'fairy' ? '#783D51' : '';
+export const color = (type) => {
+    return type === 'grass' || type === 'standard-balls'  ? '#5DBE61' : 
+		type === 'fire' || type === 'special-balls'  ? '#F57568' :
+		type === 'water' || type === 'healing'  ? '#58A7F2' : 
+		type === 'normal' || type === 'status-cures'  ? '#ABA873' :
+		type === 'flying' || type === 'revival'  ? '#075663' :
+		type === 'bug' || type === 'pp-recovery'  ? '#90B92D' : 
+		type === 'poison' || type === 'vitamins'  ? '#60127F' : 
+		type === 'electric' || type === 'stat-boosts'  ? '#FACA4A' : 
+		type === 'ground' || type === 'spelunking'  ? '#BEAB20' : 
+		type === 'fighting' || type === 'collectibles'  ? '#7F0A10' : 
+		type === 'psychic' || type === 'evolution'  ? '#F45691' : 		
+		type === 'rock' || type === 'loot'  ? '#463F25' : 
+		type === 'ice' || type === 'dex-completion'  ? '#114EAD' : 
+		type === 'ghost' || type === 'mulch'  ? '#462A52' : 
+		type === 'dragon' || type === 'healing'  ? '#8954FC' : 
+		type === 'dark' || type === 'all-mail'  ? '#141414' : 
+		type === 'steel' || type === 'species-specific'  ? '#7A8D89' : 
+		type === 'fairy' || type === 'medicine'  ? '#F77DA6' : '';
 }
 
 export const itemTypeColor = (type) => {
@@ -61,6 +40,27 @@ export const itemTypeColor = (type) => {
 	type === 'medicine' ? '#F77DA6' : '';
 }
 
+export const typeColor = (type) => {
+    return type === 'grass' ? '#1F4020' : 
+		type === 'fire' ? '#753831' :
+		type === 'water' ? '#294F73' : 
+		type === 'normal' ? '#6B6948' :
+		type === 'flying' ? '#05414A' :
+		type === 'bug' ? '#2D3B0E' : 
+		type === 'poison' ? '#9A1DCC' : 
+		type === 'electric' ? '#7A6425' : 
+		type === 'ground' ? '#403A0B' : 
+		type === 'fighting' ? '#CC101A' : 
+		type === 'psychic' ? '#752945' : 		
+		type === 'rock' ? '#91834D' : 
+		type === 'ice' ? '#196FFA' : 
+		type === 'ghost' ? '#724585' : 
+		type === 'dragon' ? '#44297D' : 
+		type === 'dark' ? '#616161' : 
+		type === 'steel' ? '#434D4A' : 
+		type === 'fairy' ? '#783D51' : '';
+}
+
 export const typeItem = (type) => {
 	return type === 'standard-balls' ? '#1F4020' : 
 	type === 'special-balls' ? '#753831' :
@@ -80,4 +80,15 @@ export const typeItem = (type) => {
 	type === 'all-mail' ? '#616161' : 
 	type === 'species-specific' ? '#434D4A' : 
 	type === 'medicine' ? '#783D51' : '';
+}
+
+export const locationColor = (type) => {
+	return type === 'kanto' ? '#5DBE61' : 
+	type === 'johto' ? '#F57568' :
+	type === 'hoenn' ? '#58A7F2' : 
+	type === 'sinnoh' ? '#ABA873' :
+	type === 'unova' ? '#075663' :
+	type === 'kalos' ? '#90B92D' : 
+	type === 'alola' ? '#60127F' : 
+	type === 'galar' ? '#FACA4A' : '';
 }

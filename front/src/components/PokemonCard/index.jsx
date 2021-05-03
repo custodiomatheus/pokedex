@@ -4,7 +4,7 @@ import api from '../../service/api';
 
 import { SidebarContext } from '../../context/Sibedar';
 
-import { pokemonTypeColor } from '../../color';
+import { color } from '../../color';
 
 export default function PokemonCard({ name }) {
 
@@ -26,7 +26,7 @@ export default function PokemonCard({ name }) {
 				pokemon ?
 					<div
 						className={styles.card}
-						style={{backgroundColor: pokemonTypeColor(pokemon.types[0].type.name)}}
+						style={{backgroundColor: color(pokemon.types[0].type.name)}}
 						onClick={() => setSidebar({is_open: true, data: {pokemon: pokemon, item: ""}})}
 						>
 

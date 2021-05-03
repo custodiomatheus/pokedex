@@ -1,25 +1,30 @@
-.sidebar {
-    width: 43%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    border-radius: 20px 0 0 0;
-}
-
-section > div {
-    width: 90%;
-    height: 98%;
-    margin: 0 auto;
-    padding-top: 2%;
-    position: relative;
+.sidebar__header,
+.sidebar__body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .sidebar__header {
-    width: 100%;
-    height: 40%;    
+    height: 40%;
 }
 
+.sidebar__body {
+    height: 60%;
+    border-radius: 20px 20px 0 0;
+    background-color: var(--white);
+}
+
+.sidebar__header>div,
+.sidebar__body>div {
+    width: 90%;
+    height: 90%;
+}
+
+.sidebar__header>div {
+    position: relative;
+}
 
 .sidebar__title {
     color: var(--white);
@@ -28,21 +33,27 @@ section > div {
     text-transform: capitalize;
 }
 
-.sidebar__content {
+.sidebar__header .sidebar__content {
+    width: 100%;
+    height: 23%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.sidebar__list {
-    width: 40%;
+.sidebar__header .sidebar__list,
+.sidebar__body .sidebar__list {
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: space-between;
 }
 
-.sidebar__item {
+.sidebar__header .sidebar__list {
+    width: 40%;
+}
+
+.sidebar__header .sidebar__item {
     width: 47%;
     padding: 2px 0;
     border-radius: 20px;
@@ -55,24 +66,24 @@ section > div {
     text-transform: capitalize;
 }
 
+.sidebar__image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar__body .sidebar__list {
+    width: 100%;
+}
+
 .sidebar__text--dark {
     color: var(--dark-grey);
     font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.sidebar__image {
-    /* height: 150px; */
+.sidebar__body .sidebar__content {
     width: 100%;
-    /* position: absolute; */
-    /* bottom: -8%; */
-    display: flex;
-    justify-content: center;
-    /* background-color: red; */
-}
-
-.sidebar__body {
-    width: 100%;
-    height: 60%;
-    border-radius: 20px 20px 0 0;
-    background-color: var(--white);
+    height: 85%;
 }

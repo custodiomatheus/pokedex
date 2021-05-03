@@ -6,6 +6,7 @@ import api from '../../service/api';
 
 import PokemonCard from '../../components/PokemonCard';
 import ItemCard from '../../components/ItemCard';
+import LocalCard from '../../components/LocalCard';
 
 import { SidebarContext } from '../../context/Sibedar';
 
@@ -15,7 +16,7 @@ export default function Pokemon(props) {
 
 	const search = props.match.params.search;
 
-	const { sidebar, setSidebar } = useContext(SidebarContext);
+	const { setSidebar } = useContext(SidebarContext);
 
 	const history = useHistory();
 
@@ -28,7 +29,7 @@ export default function Pokemon(props) {
 				setData(response.data.results);
 			})
 			.catch(error => console.error(error));
-	}, [amountItens])
+	}, [amountItens, search])
 
 	return (
 		<div className={styles.container}>
@@ -36,7 +37,7 @@ export default function Pokemon(props) {
 				<HiArrowNarrowLeft style={{ marginRight: '1vw' }} onClick={() => { setSidebar({ is_open: false, data: null }); history.push("/") }} cursor="pointer" />
 				{
 					search === "pokemon" ?
-						"Pokemon" : "Items"
+						"Pokemon" : search === "item" ? "Items" : "Locais"
 				}
 			</h2>
 			<section className={styles.container__content}>
@@ -44,7 +45,10 @@ export default function Pokemon(props) {
 					data.map(data =>
 						search === "pokemon" ?
 							<PokemonCard key={data.name} name={data.name} /> :
-							<ItemCard key={data.name} name={data.name} />
+							search === "item" ?
+								<ItemCard key={data.name} name={data.name} /> :
+								search === "location" ?
+									<LocalCard key={data.name} name={data.name} /> : ''
 					)
 				}
 			</section>
