@@ -8,7 +8,6 @@ export default function Header() {
 				<div>
 					<h1 className={styles.header__title}>Qual pokemon </h1>
 					<h1 className={styles.header__title}>você está procurando?</h1>
-					a
 				</div>
 			</section>
 
