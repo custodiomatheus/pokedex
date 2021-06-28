@@ -2,10 +2,11 @@ import { useContext, useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 
 import styles from '../style.module.css';
+import stylesPokemon from './style.module.css';
 
 import { SidebarContext } from '../../../context/Sibedar';
 
-import { typeColor } from '../../../color';
+import { color, typeColor } from '../../../color';
 
 export default function SidebarPokemon({ data }) {
 
@@ -63,22 +64,30 @@ export default function SidebarPokemon({ data }) {
               content === "SOBRE" ?
                 "A" :
                 content === "HABILIDADES" ?
-                  <>
+                  <div className={stylesPokemon['list-habilidades']}>
                     {data.pokemon.abilities.map(habilidade =>
-                      <li>{habilidade.ability.name}</li>
+                      <li className={stylesPokemon['list-habilidades__item']}>{habilidade.ability.name}</li>
                     )}
-                  </> :
+                  </div> :
                   content === "ATAQUES" ?
-                    <ul>
-                      {data.pokemon.moves.map(ataque =>
-                        <li>{ataque.move.name}</li>
+                    <div className={stylesPokemon['list-ataques']}>
+                      {data.pokemon.moves.slice(0, 33).map(ataque =>
+                        <li className={stylesPokemon['list-ataques__item']}>{ataque.move.name}</li>
                       )}
-                    </ul> :
-                    <ul>
+                    </div> :
+                    <div className={stylesPokemon['list-stats']}>
                       {data.pokemon.stats.map(stat =>
-                        <li>{stat.stat.name}</li>
+                        <>
+                          <li>{stat.stat.name}</li>
+
+                          <div style={{ border: '1px solid #000' }}>
+                            <div style={{ backgroundColor: color(data.pokemon.types[0].type.name), width: `${stat.base_stat}%`, maxWidth: '100%' }}>
+                              {stat.base_stat}%
+                            </div>
+                          </div>
+                        </>
                       )}
-                    </ul>
+                    </div>
             }
           </div>
         </div>

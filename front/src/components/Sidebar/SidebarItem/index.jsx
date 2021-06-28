@@ -5,7 +5,7 @@ import styles from '../style.module.css';
 
 import { SidebarContext } from '../../../context/Sibedar';
 
-import { itemTypeColor, typeItem } from '../../../color';
+import { typeItem } from '../../../color';
 
 export default function SidebarItem({ data }) {
 

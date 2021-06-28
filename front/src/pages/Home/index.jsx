@@ -10,7 +10,7 @@ export default function Home() {
 			<section className={styles.container__choice}>
 				<div className={styles.choice}>
 					<div className={styles["choice__item--1"]} onClick={() => history.push("/pokedex/pokemon")}><span className={styles.choice__text}>Pokedex</span></div>
-					<div className={styles["choice__item--2"]}><span className={styles.choice__text}>Favoritos</span></div>
+					<div className={styles["choice__item--2"]} onClick={() => history.push("/pokedex/favoritos")}><span className={styles.choice__text}>Favoritos</span></div>
 				</div>
 				<div className={styles.choice}>
 					<div className={styles["choice__item--3"]} onClick={() => history.push("/pokedex/item")}><span className={styles.choice__text}>Itens</span></div>
