@@ -1,0 +1,21 @@
+.list-habilidades {}
+
+.list-habilidades__item {
+  text-transform: capitalize;
+  padding: 7px 0;
+}
+
+.list-ataques {
+  column-count: 3;
+}
+
+.list-ataques__item {
+  text-transform: capitalize;
+  padding: 3px 0;
+}
+
+.list-stats {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-row-gap: 10px;
+}
