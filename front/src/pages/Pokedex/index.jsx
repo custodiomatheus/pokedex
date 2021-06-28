@@ -4,9 +4,9 @@ import { HiArrowNarrowLeft } from 'react-icons/hi';
 
 import api from '../../service/api';
 
-import PokemonCard from '../../components/PokemonCard';
-import ItemCard from '../../components/ItemCard';
-import LocalCard from '../../components/LocalCard';
+import PokemonCard from '../../components/Card/PokemonCard';
+import ItemCard from '../../components/Card/ItemCard';
+import LocalCard from '../../components/Card/LocalCard';
 
 import { SidebarContext } from '../../context/Sibedar';
 
@@ -20,35 +20,35 @@ export default function Pokemon(props) {
 
 	const history = useHistory();
 
-	const [data, setData] = useState([]);
-	const [amountItens, setAmoutItens] = useState(50);
+	const [amountItens, setAmoutItens] = useState(0);
+	const [elements, setElements] = useState([])
 
 	useEffect(() => {
-		api.get(`/${search}?limit=${amountItens}&offset=0`)
-			.then(response => {
-				setData(response.data.results);
-			})
-			.catch(error => console.error(error));
+		if (search !== "favoritos")
+			api.get(`/${search}?offset=${amountItens}`)
+				.then(response => setElements(elements => [...elements, ...response.data.results]))
+				.catch(error => console.error(error));
+
 	}, [amountItens, search])
 
 	return (
 		<div className={styles.container}>
 			<h2 className={styles.container__title}>
-				<HiArrowNarrowLeft style={{ marginRight: '1vw' }} onClick={() => { setSidebar({ is_open: false, data: null }); history.push("/") }} cursor="pointer" />
+				<HiArrowNarrowLeft style={{ marginRight: '1vw' }} onClick={() => { setSidebar({ is_open: false, data: null }); history.push("/"); }} cursor="pointer" />
 				{
-					search === "pokemon" ?
-						"Pokemon" : search === "item" ? "Items" : "Locais"
+					search === "pokemon" ? "Pokemon" :
+						search === "item" ? "Items" :
+							search === "location" ? "Locais" :
+								"Favoritos"
 				}
 			</h2>
 			<section className={styles.container__content}>
 				{
-					data.map(data =>
-						search === "pokemon" ?
-							<PokemonCard key={data.name} name={data.name} /> :
-							search === "item" ?
-								<ItemCard key={data.name} name={data.name} /> :
-								search === "location" ?
-									<LocalCard key={data.name} name={data.name} /> : ''
+					elements.map(elem =>
+							search === "pokemon" ?
+								<PokemonCard key={elem.name} name={elem.name} favoritos={false} /> :
+								search === "item" ? <ItemCard key={elem.name} name={elem.name} /> :
+									search === "location" ? <LocalCard key={elem.name} name={elem.name} /> : ""
 					)
 				}
 			</section>
