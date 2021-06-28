@@ -16,7 +16,9 @@ function App() {
         <>
         <Header />
 
-        <SidebarContext.Provider value = {{ sidebar, setSidebar }}>
+        <SidebarContext.Provider value = {
+            { sidebar, setSidebar }
+        }>
         <main>
         <Routes />
         </main>
