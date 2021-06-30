@@ -7,27 +7,30 @@ import Routes from './routes';
 import styles from './App.module.css';
 
 import { SidebarContext } from "./context/Sibedar";
+import { FavoritosContext } from "./context/Favoritos";
 
 function App() {
 
-    const [sidebar, setSidebar] = useState({ is_open: false, data: null })
+	const [sidebar, setSidebar] = useState({ is_open: false, data: null })
+	const [favoritos, setFavoritos] = useState([])
 
-    return ( 
-        <>
-        <Header />
+	return (
+		<>
+			<Header />
 
-        <SidebarContext.Provider value = {
-            { sidebar, setSidebar }
-        }>
-        <main>
-        <Routes />
-        </main>
+			<SidebarContext.Provider value={{ sidebar, setSidebar }}>
+				<FavoritosContext.Provider value={{ favoritos, setFavoritos }}>
+					
+					<main>
+						<Routes />
+					</main>
 
-        <Sidebar />
-        </SidebarContext.Provider>
+					<Sidebar />
+				</FavoritosContext.Provider>
+			</SidebarContext.Provider>
 
-        </>
-    );
+		</>
+	);
 }
 
 export default App;
