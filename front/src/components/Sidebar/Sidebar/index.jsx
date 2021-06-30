@@ -19,11 +19,11 @@ export default function Sidebar() {
 		<>
 			{
 				is_open ?
-					<sidebar style={{ backgroundColor:  color(data.pokemon ? data.pokemon.types[0].type.name : data.item.category.name) }} className={styles.sidebar}>
+					<aside style={{ backgroundColor:  color(data.pokemon ? data.pokemon.types[0].type.name : data.item.category.name) }} className={styles.sidebar}>
 						{
 							data.pokemon ? <SidebarPokemon data={data} /> : <SidebarItem data={data} />
 						}
-					</sidebar>
+					</aside>
 					: ''
 			}
 		</>
