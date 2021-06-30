@@ -71,23 +71,23 @@ export default function SidebarPokemon({ data }) {
                   </div> :
                   content === "ATAQUES" ?
                     <div className={stylesPokemon['list-ataques']}>
-                      {data.pokemon.moves.slice(0, 33).map(ataque =>
+                      {data.pokemon.moves.map(ataque =>
                         <li className={stylesPokemon['list-ataques__item']}>{ataque.move.name}</li>
                       )}
                     </div> :
-                    <div className={stylesPokemon['list-stats']}>
+                    <ul className={stylesPokemon['list-stats']}>
                       {data.pokemon.stats.map(stat =>
                         <>
-                          <li>{stat.stat.name}</li>
+                          <li className={stylesPokemon['list-stats__item']}>{stat.stat.name}</li>
 
-                          <div style={{ border: '1px solid #000' }}>
-                            <div style={{ backgroundColor: color(data.pokemon.types[0].type.name), width: `${stat.base_stat}%`, maxWidth: '100%' }}>
-                              {stat.base_stat}%
+                          <div>
+                            <div style={{ backgroundColor: stat.base_stat > 50 ? color(data.pokemon.types[0].type.name) : '#ff1500', width: `${stat.base_stat}%`, maxWidth: '100%', padding: '3px 0' }}>
+                              <p style={{ margin: '0 10px' }}>{stat.base_stat}%</p>
                             </div>
                           </div>
                         </>
                       )}
-                    </div>
+                    </ul>
             }
           </div>
         </div>
