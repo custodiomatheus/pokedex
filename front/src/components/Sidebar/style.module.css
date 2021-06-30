@@ -85,5 +85,6 @@
 
 .sidebar__body .sidebar__content {
     width: 100%;
-    height: 85%;
+    max-height: 85%;
+    overflow-y: auto;
 }
