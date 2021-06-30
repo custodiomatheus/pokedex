@@ -30,7 +30,10 @@
 }
 
 .favorite--outline,
-.favorite--fill {
+.favorite--fill,
+.unFavorite--outline,
+.unFavorite--fill
+{
   position: absolute;
   right: 5%;
   top: 5%;
@@ -43,6 +46,14 @@
 }
 
 .favorite:hover .favorite--fill {
+  display: inline;
+}
+
+.unFavorite:hover .unFavorite--fill {
+  display: none;
+}
+
+.unFavorite:hover .unFavorite--outline {
   display: inline;
 }
 
