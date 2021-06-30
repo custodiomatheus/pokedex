@@ -9,6 +9,7 @@ import ItemCard from '../../components/Card/ItemCard';
 import LocalCard from '../../components/Card/LocalCard';
 
 import { SidebarContext } from '../../context/Sibedar';
+import { FavoritosContext } from '../../context/Favoritos';
 
 import styles from './style.module.css';
 
@@ -17,6 +18,7 @@ export default function Pokemon(props) {
 	const search = props.match.params.search;
 
 	const { setSidebar } = useContext(SidebarContext);
+	const { favoritos } = useContext(FavoritosContext);
 
 	const history = useHistory();
 
@@ -28,6 +30,8 @@ export default function Pokemon(props) {
 			api.get(`/${search}?offset=${amountItens}`)
 				.then(response => setElements(elements => [...elements, ...response.data.results]))
 				.catch(error => console.error(error));
+		else
+			setElements(favoritos)
 
 	}, [amountItens, search])
 
@@ -45,10 +49,11 @@ export default function Pokemon(props) {
 			<section className={styles.container__content}>
 				{
 					elements.map(elem =>
-							search === "pokemon" ?
-								<PokemonCard key={elem.name} name={elem.name} favoritos={false} /> :
-								search === "item" ? <ItemCard key={elem.name} name={elem.name} /> :
-									search === "location" ? <LocalCard key={elem.name} name={elem.name} /> : ""
+						search === "pokemon" ?
+							<PokemonCard key={elem.name} name={elem.name} isFavoritos={false} /> :
+							search === "item" ? <ItemCard key={elem.name} name={elem.name} /> :
+								search === "location" ? <LocalCard key={elem.name} name={elem.name} /> :
+									<PokemonCard key={elem.name} name={elem.name} isFavoritos={true} />
 					)
 				}
 			</section>
