@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
+import { toast } from 'react-toastify';
+
 import api from '../../../service/api';
 
 import styles from '../style.module.css';
@@ -28,17 +30,27 @@ export default function PokemonCard({ name, isFavoritos }) {
 			.catch(error => console.error(error));
 	}, [name, isFavoritos])
 
-	const favorite = (pokemonName) => {
+	const favorite = async (pokemonName) => {
 		const finded = favoritos.find(pokemon => pokemon.name === pokemonName)
-		if (!finded) setFavoritos(favoritos => [...favoritos, { name: pokemonName, isFavorito: true }]);
+		if (!finded) {
+			try {
+				await setFavoritos(favoritos => [...favoritos, { name: pokemonName, isFavorito: true }])
+				toast.success(`${pokemonName} adiciona a sua lista de favoritos`);
+			} catch (error) {
+				toast.error(`Erro ao adicionar ${pokemonName} a lista de favoritos`);
+			}
+		} else {
+			toast.warning(`O pokemon ${pokemonName} já estava na sua lista de favoritos`);
+		}
 	}
 
-	const unFavorite = (pokemonName) => { 
+	const unFavorite = (pokemonName) => {
 		favoritos.find((pokemon, index) => {
-			if(pokemon?.name === pokemonName) {
+			if (pokemon?.name === pokemonName) {
 				favoritos.splice(index, 1);
 				return index;
 			}
+			return index;
 		})
 
 	}

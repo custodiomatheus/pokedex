@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 import Header from './components/Header';
 import Sidebar from './components/Sidebar/Sidebar';
@@ -18,9 +20,22 @@ function App() {
 		<>
 			<Header />
 
+			<ToastContainer
+				// toastClassName={({ type }) => styles[!!type ? `toast-${type}` : `toast-default`]}
+				position="top-right"
+				autoClose={3000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+			/>
+
 			<SidebarContext.Provider value={{ sidebar, setSidebar }}>
 				<FavoritosContext.Provider value={{ favoritos, setFavoritos }}>
-					
+
 					<main>
 						<Routes />
 					</main>
@@ -34,3 +49,6 @@ function App() {
 }
 
 export default App;
+
+// DAR RESPOSTA AO USUARIO QUE FAVORITOU O POKEMON
+// ADICIONAR LOADING YOUTUBE

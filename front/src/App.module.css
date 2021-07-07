@@ -19,3 +19,19 @@ main {
 ::-webkit-scrollbar-thumb:hover {
   background: #293033;
 }
+
+/* .toast-success {
+  background-color: #1F4020;
+}
+
+.toast-error {
+  background-color: #753831;
+}
+
+.toast-warning {
+  background-color: #7A6425;
+}
+
+.toast-default {
+  background-color: #000;
+} */
