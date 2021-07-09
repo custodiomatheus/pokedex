@@ -57,7 +57,7 @@ export default function Pokemon(props) {
 					)
 				}
 			</section>
-			<h4 className={styles.container__text} onClick={() => setAmoutItens(amountItens + 20)} >Ver mais itens</h4>
+			<h4 className={styles.container__text} onClick={() => setAmoutItens(amountItens + 20)} >Ver mais</h4>
 		</div>
 	);
 }

@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
-import { toast } from 'react-toastify';
 import { useToasts } from 'react-toast-notifications';
 
 import api from '../../../service/api';

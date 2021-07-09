@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { ToastProvider } from 'react-toast-notifications';
-import 'react-toastify/dist/ReactToastify.css';
 
 import Header from './components/Header';
 import Sidebar from './components/Sidebar/Sidebar';
