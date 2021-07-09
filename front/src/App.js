@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ToastContainer } from 'react-toastify'
+import { ToastProvider } from 'react-toast-notifications';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Header from './components/Header';
@@ -19,31 +19,18 @@ function App() {
 	return (
 		<>
 			<Header />
+			<ToastProvider autoDismissTimeout={3000} autoDismiss={true}>
+				<SidebarContext.Provider value={{ sidebar, setSidebar }}>
+					<FavoritosContext.Provider value={{ favoritos, setFavoritos }}>
 
-			<ToastContainer
-				// toastClassName={({ type }) => styles[!!type ? `toast-${type}` : `toast-default`]}
-				position="top-right"
-				autoClose={3000}
-				hideProgressBar={false}
-				newestOnTop={false}
-				closeOnClick
-				rtl={false}
-				pauseOnFocusLoss
-				draggable
-				pauseOnHover
-			/>
+						<main>
+							<Routes />
+						</main>
 
-			<SidebarContext.Provider value={{ sidebar, setSidebar }}>
-				<FavoritosContext.Provider value={{ favoritos, setFavoritos }}>
-
-					<main>
-						<Routes />
-					</main>
-
-					<Sidebar />
-				</FavoritosContext.Provider>
-			</SidebarContext.Provider>
-
+						<Sidebar />
+					</FavoritosContext.Provider>
+				</SidebarContext.Provider>
+			</ToastProvider>
 		</>
 	);
 }

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 import { toast } from 'react-toastify';
+import { useToasts } from 'react-toast-notifications';
 
 import api from '../../../service/api';
 
@@ -14,9 +15,11 @@ import { color } from '../../../color';
 export default function PokemonCard({ name, isFavoritos }) {
 
 	const { setSidebar } = useContext(SidebarContext);
-	const { favoritos, setFavoritos } = useContext(FavoritosContext)
+	const { favoritos, setFavoritos } = useContext(FavoritosContext);
 
 	const [pokemon, setPokemon] = useState();
+
+	const { addToast } = useToasts();
 
 	useEffect(() => {
 		api.get(`/pokemon/${name}`)
@@ -34,13 +37,13 @@ export default function PokemonCard({ name, isFavoritos }) {
 		const finded = favoritos.find(pokemon => pokemon.name === pokemonName)
 		if (!finded) {
 			try {
-				await setFavoritos(favoritos => [...favoritos, { name: pokemonName, isFavorito: true }])
-				toast.success(`${pokemonName} adiciona a sua lista de favoritos`);
+				await setFavoritos(favoritos => [...favoritos, { name: pokemonName, isFavorito: true }]);
+				addToast(`${pokemonName} adiciona a sua lista de favoritos`, { appearance: 'success' });
 			} catch (error) {
-				toast.error(`Erro ao adicionar ${pokemonName} a lista de favoritos`);
+				addToast(`Erro ao adicionar ${pokemonName} a lista de favoritos`, { appearance: 'error' });
 			}
 		} else {
-			toast.warning(`O pokemon ${pokemonName} já estava na sua lista de favoritos`);
+			addToast(`Erro ao adicionar ${pokemonName} a lista de favoritos`, { appearance: 'warning' });
 		}
 	}
 
@@ -48,6 +51,7 @@ export default function PokemonCard({ name, isFavoritos }) {
 		favoritos.find((pokemon, index) => {
 			if (pokemon?.name === pokemonName) {
 				favoritos.splice(index, 1);
+				addToast(`${pokemonName} removido com sucesso`, { appearance: 'success' });
 				return index;
 			}
 			return index;
