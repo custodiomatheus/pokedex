@@ -12,7 +12,7 @@ export default function SidebarPokemon({ data }) {
 
   const { setSidebar } = useContext(SidebarContext);
 
-  const [content, setContent] = useState("SOBRE")
+  const [content, setContent] = useState("HABILIDADES")
 
   return (
     <>
@@ -53,7 +53,6 @@ export default function SidebarPokemon({ data }) {
       <section className={styles.sidebar__body}>
         <div>
           <ul className={styles.sidebar__list}>
-            <li className={styles.sidebar__item} onClick={() => setContent("SOBRE")}><span className={styles["sidebar__text--dark"]}>Sobre</span></li>
             <li className={styles.sidebar__item} onClick={() => setContent("HABILIDADES")}><span className={styles["sidebar__text--dark"]}>Habilidades</span></li>
             <li className={styles.sidebar__item} onClick={() => setContent("ATAQUES")}><span className={styles["sidebar__text--dark"]}>Ataques</span></li>
             <li className={styles.sidebar__item} onClick={() => setContent("STATS")}><span className={styles["sidebar__text--dark"]}>Stats</span></li>
@@ -61,8 +60,6 @@ export default function SidebarPokemon({ data }) {
 
           <div className={styles.sidebar__content}>
             {
-              content === "SOBRE" ?
-                "A" :
                 content === "HABILIDADES" ?
                   <div className={stylesPokemon['list-habilidades']}>
                     {data.pokemon.abilities.map(habilidade =>
