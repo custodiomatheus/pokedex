@@ -1,5 +1,7 @@
 # Pokedex
-Pokedex using PokeAPI
+Pokedex usando a PokeAPI onde é possível ver todos os pokemons, itens, locais e seus pokemons favoritos.
+Ao clicar em algum card do pokemon ou do item temos algums detalhes sobre eles e para favoritar um pokemon basta clicar no <3.
+
 
 ## Como rodar o projeto
 
