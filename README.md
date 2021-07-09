@@ -30,3 +30,5 @@ PS: isso pode levar alguns segundos....
 ```bash
 npm start
 ```
+![Pagina inicial](./index.png)
+
