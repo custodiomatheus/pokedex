@@ -20,13 +20,13 @@ cd pokedex
 cd front
 ```
 
-5. Rode o comando abaixo para realizar instalar de todas as dependências do projeto
+4. Rode o comando abaixo para realizar instalar de todas as dependências do projeto
 ```bash
 npm install
 ```
 PS: isso pode levar alguns segundos....
 
-7. Para finalizar, rode o comando abaixo para iniciar o projeto
+5. Para finalizar, rode o comando abaixo para iniciar o projeto
 ```bash
 npm start
 ```
