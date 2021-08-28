@@ -1,34 +1,35 @@
 # Pokedex
-Pokedex usando a PokeAPI onde é possível ver todos os pokemons, itens, locais e seus pokemons favoritos.
-Ao clicar em algum card do pokemon ou do item temos algums detalhes sobre eles e para favoritar um pokemon basta clicar no <3.
+Pokedex using PokeAPI where you can see all pokemons, items, locations and your favorite pokemons.
+When clicking on a pokemon or item card you can see more details about them and to add a pokemon as a favorite, just click on the <3..
 
 
-## Como rodar o projeto
+## How run the project
 
-### Requisitos
-Tenha o Node na versão ≥ 10.15 instalado em seu computador.
-Com o Node instalado siga o passo a passo abaixo ;)
+### Requests
+Have the NodeJs version ≥ 10.15 installed on your computer.
+With the NodeJs installed, follow the steps below ;)
 
-1. Baixe o repositório, para isso você pode baixar o .zip ou então pelo comando
+1. Clone the repository, you can dowload the .zip or use the follow command
 ```bash
 git clone https://github.com/custodiomatheus/pokedex.git
 ```
 
-3. Acesse a pasta front entrando na pasta pokedex e então front ou então pelos comandos
+2. Access the project folder
 ```bash
 cd pokedex
 cd front
 ```
 
-4. Rode o comando abaixo para realizar instalar de todas as dependências do projeto
+3. Run the command below to install all project dependencies
 ```bash
 npm install
 ```
-PS: isso pode levar alguns segundos....
+PS: this can take a few seconds....
 
-5. Para finalizar, rode o comando abaixo para iniciar o projeto
+4. Run the command below to initialize the project
 ```bash
 npm start
 ```
+5. Last but not least, open some browser in the follow url http://localhost:3000
 ![Pagina inicial](./index.png)
 
