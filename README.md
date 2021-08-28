@@ -34,3 +34,12 @@ npm start
 
 ![Pagina inicial](./index.png)
 
+## Technologies
+* axios
+* react
+* react-icons
+* react-router-dom
+* react-spinkit
+* react-toast-notifications
+* typescript
+
