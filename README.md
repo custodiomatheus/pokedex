@@ -31,5 +31,6 @@ PS: this can take a few seconds....
 npm start
 ```
 5. Last but not least, open some browser in the follow url http://localhost:3000
+
 ![Pagina inicial](./index.png)
 
