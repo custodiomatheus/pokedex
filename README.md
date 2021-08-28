@@ -41,5 +41,5 @@ npm start
 * react-router-dom
 * react-spinkit
 * react-toast-notifications
-* typescript
+* contextAPI
 
